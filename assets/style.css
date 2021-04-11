@@ -66,6 +66,7 @@ nav{
   text-decoration: none;
   padding: 0 1rem;
   height: 100%;
+  position: relative;
 }
 
 .nav-btn{
@@ -98,7 +99,24 @@ nav{
 
 .nav-link:hover{
   color: #f77062;
-  transition: 0.3s
+  transition: 0.3s;
+  position: relative;
+}
+
+.nav-link::after{
+  content: '';
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  height: 3px;
+  background: white;
+  width: 0;
+  transition: all 0.1s ease-in;
+}
+
+.nav-link:hover:after{
+width: 50%;
+left: 25%;
 }
 
 @media screen and (max-width: 960px){
@@ -385,7 +403,7 @@ nav{
   background-size: cover;
   background-position: center;
   position: relative;
-  color: white;
+  color: rgb(223, 223, 223);
 }
 
 .services-card:nth-child(2){
@@ -431,5 +449,71 @@ nav{
   }
   .services-card{
     width: 300px;
+  }
+}
+
+footer{
+  min-height: 25vh;
+  background: #141414;
+  text-align: center;
+}
+
+footer h3{
+  color: rgb(223, 223, 223);
+  line-height: 50px;
+}
+
+.footer-links-wrapper {
+  min-height: 25vh;
+  background: #141414;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: rgb(212, 212, 212);
+  text-decoration: none;
+  outline: none;
+}
+
+.footer-links-items{
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
+}
+
+.footer-links-items h2{
+  margin-bottom: 10px;
+}
+
+.footer-links-items a{
+  color: #bb463d;
+text-decoration: none;
+outline: none;
+margin-bottom: 5px;
+position: relative;
+}
+
+.footer-links-items a::after{
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: -18px;
+  border-radius: 25%;
+  height: 3px;
+  width: 0;
+  background: #e7e7e7;
+  transition: all 0.1s ease-in-out;
+}
+.footer-links-items a:hover::after{
+  width: 15px;
+}
+
+@media screen and (max-width: 600px){
+  .footer-links-wrapper{
+    flex-direction: column;
+    padding-top: 15px;
+  }
+  .footer-links-items{
+    margin-top: 20px;
   }
 }
