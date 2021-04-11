@@ -561,5 +561,10 @@ position: relative;
 }
 
 .services-lti h1{
-  padding-top: 60px;
+  padding-top: 50px;
+}
+
+.main-lti img{
+  width: 60%;
+  height: 60%;
 }
